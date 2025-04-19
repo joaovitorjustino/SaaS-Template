@@ -1,6 +1,7 @@
 import { auth } from "@/app/lib/auth";
 import { redirect } from "next/navigation";
 import { handleAuth } from "../actions/handle-auth";
+import Link from "next/link";
 
 export default async function Dashboard() {
     const session = await auth();
@@ -21,6 +22,9 @@ export default async function Dashboard() {
                     <button type="submit" className="border rounded-md px-2 cursor-pointer">Logout</button>
                 </form>
             )}
+            <Link href="/pagamentos">
+                Pagamentos
+            </Link>
         </div>
     );
 }
